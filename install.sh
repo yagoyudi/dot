@@ -96,7 +96,7 @@ install_vagrant() {
 	sudo apt update && sudo apt install vagrant
 }
 
-make_nvim
-make_alacritty
 make_tmux
 make_bash
+make_alacritty
+make_nvim
