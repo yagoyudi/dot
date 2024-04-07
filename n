@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# n - quickly create a note.
+#
+# Author: Yago Furuta
+# Email: yagofuruta@protonmail.com
+#
+#------------------------------------------------------------------------------
+# This script helps me to create a new note using $EDITOR and PARA (a method of
+# file organization created by Tiago Forte).
+#
+# Exemple:
+#   $ ./n para-method
+#   This will create a file called 'para-method.md' in $INBOX_DIR and open with
+#   $EDITOR.
+#------------------------------------------------------------------------------
+# Testes in:
+#   GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
+
+FILENAME="$1"
+INBOX_DIR="$HOME/repos/notes/0-inbox/"
+
+# filename not provided?
+[ $# -ne 1 ] && {
+	echo "Usage: $0 [FILENAME without .md]."
+	exit 1
+}
+
+# file already exit?
+[ "$(ls $INBOX_DIR | grep -i -q "$FILENAME.md" && echo $?)" = "0" ] && {
+	echo "Error: file already exist."
+	exit 1
+}
+
+cd $HOME/repos/notes/ && $EDITOR 0-inbox/"${FILENAME}.md"
