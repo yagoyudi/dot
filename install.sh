@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+# install.sh - install my dotfiles.
+#
+# Author: Yago Furuta
+# Email: yagofuruta@protonmail.com
+# -----------------------------------------------------------------------------
+# This is a personal script to install my dotfiles.
+#
+# Example:
+#   $ ./install.sh
+#   This will start the installation.
+# -----------------------------------------------------------------------------
+# Tested in:
+#   vagrant ubuntu/jammy64 vm (just tested installing tmux, bash, alacritty and
+#   nvim).
+
 RED="\033[31;1m"
 RESET_COLOR="\033[0m"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -67,6 +82,7 @@ setup_tmux() {
 
 make_bash() {
 	setup_bash
+	source $HOME/.bashrc
 }
 
 setup_bash() {
@@ -74,7 +90,6 @@ setup_bash() {
 	curl -sS https://starship.rs/install.sh | sh
 	ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 	ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
-	source $HOME/.bashrc
 }
 
 install_my_notes() {
@@ -84,11 +99,12 @@ install_my_notes() {
 	ln -sf "$PWD/n" "$HOME/.local/bin/n"
 }
 
-# obsidian
-#wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
-#sudo dpkg -i obsidian_1.5.12_amd64.deb
+install_obsidian() {
+	wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
+	sudo dpkg -i obsidian_1.5.12_amd64.deb
+}
 
-# docker
+# TODO: docker
 
 install_vagrant() {
 	wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
