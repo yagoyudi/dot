@@ -18,8 +18,8 @@ install_nvim() {
 
 setup_nvim() {
 	echo -e "${RED}Setting up Neovim${RESET_COLOR}"
-	mkdir -p "$XDG_CONFIG_HOME"/nvim
-	ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME/nvim"
+	mkdir "$XDG_CONFIG_HOME/nvim"
+	ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"
 }
 
 make_alacritty() {
@@ -75,6 +75,7 @@ setup_bash() {
 	curl -sS https://starship.rs/install.sh | sh
 	ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 	ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
+	source $HOME/.bashrc
 }
 
 install_my_notes() {
