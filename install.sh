@@ -18,8 +18,7 @@ install_nvim() {
 
 setup_nvim() {
 	echo -e "${RED}Setting up Neovim${RESET_COLOR}"
-	mkdir "$XDG_CONFIG_HOME/nvim"
-	ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"
+	ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME/nvim"
 }
 
 make_alacritty() {
