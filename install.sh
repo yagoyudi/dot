@@ -30,7 +30,8 @@ make_alacritty() {
 install_alacritty() {
 	echo -e "${RED}Installing Alacritty${RESET_COLOR}"
 	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
-	git clone https://github.com/alacritty/alacritty.git && cd alacritty
+	git clone https://github.com/alacritty/alacritty.git
+	cd alacritty
 	cargo build --release
 
 	sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
@@ -40,6 +41,7 @@ install_alacritty() {
 
 	mkdir -p ~/.bash_completion
 	cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
+	cd ..
 }
 
 setup_alacritty() {
