@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 RED="\033[31;1m"
+RESET_COLOR="\033[0m"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 make_nvim() {
@@ -9,14 +10,14 @@ make_nvim() {
 }
 
 install_nvim() {
-	echo -e "${RED}Installing Neovim"
+	echo -e "${RED}Installing Neovim${RESET_COLOR}"
 	sudo add-apt-repository ppa:neovim-ppa/unstable -y
 	sudo apt update
 	sudo apt install make gcc ripgrep unzip neovim
 }
 
 setup_nvim() {
-	echo -e "${RED}Setting up Neovim"
+	echo -e "${RED}Setting up Neovim${RESET_COLOR}"
 	mkdir -p "$XDG_CONFIG_HOME"/nvim
 	ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME/nvim"
 }
@@ -27,7 +28,7 @@ make_alacritty() {
 }
 
 install_alacritty() {
-	echo -e "${RED}Installing Alacritty"
+	echo -e "${RED}Installing Alacritty${RESET_COLOR}"
 	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 	git clone https://github.com/alacritty/alacritty.git && cd alacritty
 	cargo build --release
@@ -42,7 +43,7 @@ install_alacritty() {
 }
 
 setup_alacritty() {
-	echo -e "${RED}Setting up Alacritty"
+	echo -e "${RED}Setting up Alacritty${RESET_COLOR}"
 	mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
 	git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
 	ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
@@ -54,12 +55,12 @@ make_tmux() {
 }
 
 install_tmux() {
-	echo -e "${RED}Installing Tmux"
+	echo -e "${RED}Installing Tmux${RESET_COLOR}"
 	sudo apt install tmux
 }
 
 setup_tmux() {
-	echo -e "${RED}Setting up Tmux"
+	echo -e "${RED}Setting up Tmux${RESET_COLOR}"
 	ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 }
 
@@ -68,7 +69,7 @@ make_bash() {
 }
 
 setup_bash() {
-	echo -e "${RED}Setting up Bash"
+	echo -e "${RED}Setting up Bash${RESET_COLOR}"
 	curl -sS https://starship.rs/install.sh | sh
 	ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 	ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
