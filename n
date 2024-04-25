@@ -26,10 +26,4 @@ INBOX_DIR="$HOME/repos/notes/0-inbox/"
 	exit 1
 }
 
-# file already exit?
-[ "$(ls $INBOX_DIR | grep -i -q "$FILENAME.md" && echo $?)" = "0" ] && {
-	echo "Error: file already exist."
-	exit 1
-}
-
 cd $HOME/repos/notes/ && $EDITOR 0-inbox/"${FILENAME}.md"
