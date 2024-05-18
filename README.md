@@ -9,3 +9,4 @@ Usando atualmente:
 # Links úteis
 
 <https://wiki.archlinux.org/title/Dotfiles>
+<https://fedoraproject.org/spins/sway/>
