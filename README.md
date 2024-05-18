@@ -8,6 +8,6 @@ Usando atualmente:
 
 # Links úteis
 
-<https://en.wikipedia.org/wiki/Less_is_more>
-<https://wiki.archlinux.org/title/Dotfiles>
-<https://fedoraproject.org/spins/sway/>
+<https://en.wikipedia.org/wiki/Less_is_more> <br>
+<https://wiki.archlinux.org/title/Dotfiles> <br>
+<https://fedoraproject.org/spins/sway/> <br>
