@@ -1,0 +1,6 @@
+set noswapfile
+set nobackup
+
+set background=dark
+set smartindent
+set autoindent

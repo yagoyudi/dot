@@ -1,8 +1,11 @@
 # Dotfiles
 
-# Como instalar?
+Usando atualmente:
+* Shell: Bash
+* WM/DE: Sway
+* Editor: Vim
+* Terminal: foot
 
-```bash
-./install.sh
-```
+# Links úteis
 
+<https://wiki.archlinux.org/title/Dotfiles>
