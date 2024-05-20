@@ -29,3 +29,4 @@ unset rc
 set -o vi
 export EDITOR=vim
 
+eval "$(starship init bash)"
