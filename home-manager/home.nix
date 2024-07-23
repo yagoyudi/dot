@@ -5,6 +5,7 @@
     ./bashrc.nix
     ./vimrc.nix
     ./foot.nix
+    ./sway.nix
   ];
 
   home.packages = with pkgs; [
@@ -13,14 +14,9 @@
     #CLI program
     pulsemixer #audio manager
     imv #image viewer
+    mpv
     nix-prefetch-github #get hash and head from github repo
-    glow # markdown viewer terminal
-
-    #App launcher
-    bemenu
-
-    #Video viewer
-    haruna
+    tcpdump
 
     #Office suite
     libreoffice
@@ -28,6 +24,8 @@
     #Font
     jetbrains-mono
     nerdfonts
+
+    zathura
   ];
 
   home.username = "yf";

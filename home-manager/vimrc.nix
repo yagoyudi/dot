@@ -23,7 +23,7 @@
       set smartindent
       set autoindent
 
-      autocmd FileType c setlocal shiftwidth=8 softtabstop=8
+      autocmd FileType c setlocal shiftwidth=4 softtabstop=4
       autocmd BufRead,BufNewFile *.h set filetype=c
 
       xnoremap "+y y:call system("wl-copy", @")<cr>
