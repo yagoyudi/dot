@@ -12,21 +12,20 @@
   home.packages = with pkgs; [
     firefox
 
-    #CLI program
-    pulsemixer #audio manager
-    imv #image viewer
+    pulsemixer
+    imv
     mpv
-    nix-prefetch-github #get hash and head from github repo
+    nix-prefetch-github
     tcpdump
 
-    #Office suite
     libreoffice
 
-    #Font
     jetbrains-mono
     nerdfonts
 
     zathura
+
+    starship
   ];
 
   home.username = "yf";

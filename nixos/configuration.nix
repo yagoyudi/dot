@@ -1,20 +1,12 @@
 { config, pkgs, ... }:
 {
   imports = [
-    <home-manager/nixos>
-
     ./hardware-configuration.nix
-
     ./libvirt.nix
-    ./prompt.nix
-
     ./audio.nix
-
     ./network.nix
-
-    ./wayland/general.nix
-    ./wayland/window-manager.nix
-    ./wayland/login-manager.nix
+    ./window-manager.nix
+    ./login-manager.nix
   ];
 
   # Bootloader
@@ -53,7 +45,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    wireshark
   ];
 
   system.stateVersion = "22.11";
