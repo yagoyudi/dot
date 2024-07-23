@@ -6,6 +6,7 @@
     ./vimrc.nix
     ./foot.nix
     ./sway.nix
+    ./inputrc.nix
   ];
 
   home.packages = with pkgs; [
