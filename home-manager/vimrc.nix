@@ -2,15 +2,17 @@
 {
   programs.vim = {
     enable = true;
-
     defaultEditor = true;
 
     settings = {
       background= "dark";
-      expandtab = true;
       shiftwidth = 2;
       tabstop = 2;
     };
+
+    plugins = with pkgs.vimPlugins; [
+      vim-go
+    ];
 
     extraConfig = ''
       syntax on
@@ -23,7 +25,7 @@
       set smartindent
       set autoindent
 
-      autocmd FileType c setlocal shiftwidth=4 softtabstop=4
+      autocmd FileType c,go setlocal shiftwidth=4 tabstop=4
       autocmd BufRead,BufNewFile *.h set filetype=c
 
       xnoremap "+y y:call system("wl-copy", @")<cr>

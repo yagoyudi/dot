@@ -10,9 +10,16 @@
       vi="vim";
     };
 
+    initExtra = ''
+      source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
+
+    sessionVariables = {
+      PATH = "$PATH:$HOME/go/bin";
+    };
+
     bashrcExtra = ''
       set -o vi
-      export EDITOR=vi
       eval "$(starship init bash)"
     '';
   };

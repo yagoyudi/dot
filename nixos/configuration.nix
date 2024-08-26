@@ -1,25 +1,24 @@
 { config, pkgs, ... }:
 {
   imports = [
-    <home-manager/nixos>
-
     ./hardware-configuration.nix
 
+    ./manpages.nix
+    ./audio.nix
+    ./bluetooth.nix
+    ./network.nix
+    ./fonts.nix
+
+    ./wireshark.nix
     ./libvirt.nix
     ./prompt.nix
-
-    ./audio.nix
-
-    ./network.nix
-
-    ./wayland/general.nix
-    ./wayland/window-manager.nix
-    ./wayland/login-manager.nix
   ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  services.journald.extraConfig = "SystemMaxUse=1G";
 
   time.timeZone = "America/Sao_Paulo";
 
@@ -53,7 +52,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    wireshark
   ];
 
   system.stateVersion = "22.11";

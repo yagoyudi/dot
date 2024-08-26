@@ -5,28 +5,36 @@
     ./bashrc.nix
     ./vimrc.nix
     ./foot.nix
-    ./sway.nix
+    ./tmux.nix
     ./inputrc.nix
+    ./sway.nix
+
+    ./go.nix
+    ./c.nix
   ];
 
   home.packages = with pkgs; [
     firefox
 
-    #CLI program
-    pulsemixer #audio manager
-    imv #image viewer
+    pulsemixer
+    imv
     mpv
-    nix-prefetch-github #get hash and head from github repo
-    tcpdump
+    nix-prefetch-github
+    tree
+    grim
+    slurp
+    brightnessctl
+    wl-clipboard
 
-    #Office suite
     libreoffice
 
-    #Font
     jetbrains-mono
     nerdfonts
 
+    mupdf
     zathura
+
+    bemenu
   ];
 
   home.username = "yf";

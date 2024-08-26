@@ -5,10 +5,12 @@
     config = rec {
       modifier = "Mod1";
       terminal = "foot";
-      menu = "dmenu_run -p Run -l 10";
+      menu = "bemenu-run -p Run -l 10";
       input = {
         "type:keyboard" = {
           xkb_layout = "br";
+          repeat_rate = "50";
+          repeat_delay = "300";
         };
         "type:touchpad" = {
           tap = "enabled";

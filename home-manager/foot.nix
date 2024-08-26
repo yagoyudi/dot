@@ -29,7 +29,7 @@
 
       main = {
         term = "xterm-256color";
-        font = "monospace:size=12";
+        font = "monospace:size=14";
       };
     };
   };

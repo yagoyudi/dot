@@ -1,5 +1,5 @@
 {config, pkgs, ...}:
 {
-  networking.hostName = "frieren";
+  networking.hostName = "swift3";
   networking.networkmanager.enable = true;
 }
