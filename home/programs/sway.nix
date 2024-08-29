@@ -30,7 +30,7 @@ in {
           };
           bars = [{
             position = "top";
-            statusCommand = "while /home/yf/dotfiles/home/programs/status.sh; do sleep 50; done";
+            statusCommand = "while $HOME/dotfiles/home/programs/status.sh; do sleep 50; done";
 
             colors = {
               statusline = "#ffffff";
