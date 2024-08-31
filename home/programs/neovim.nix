@@ -38,6 +38,11 @@ in {
             type = "lua";
             config = ''
 							local lspconfig = require("lspconfig")
+
+							-- disable signcolumn signals
+							vim.diagnostic.config({signs = false})
+
+						 	-- gopls
 							lspconfig.gopls.setup({})
 							vim.api.nvim_create_autocmd("BufWritePre", {
 									pattern = "*.go",
@@ -56,7 +61,9 @@ in {
 										vim.lsp.buf.format({async = false})
 									end
 							})
-							vim.diagnostic.config({signs = false})
+
+							-- nix lsp
+							require'lspconfig'.nil_ls.setup{}
             '';
           }
           {

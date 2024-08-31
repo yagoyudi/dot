@@ -3,6 +3,7 @@
     ./archive.nix
     ./c.nix
     ./go.nix
+		./nix.nix
     ./downloader.nix
     ./kubectl.nix
     ./libreoffice.nix
