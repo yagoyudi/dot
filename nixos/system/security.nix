@@ -1,5 +1,5 @@
 { ... }: {
-  security = {
+	security = {
 		pam.services.swaylock = {};
 		polkit.enable = true;
 		rtkit.enable = true;
@@ -7,5 +7,5 @@
 			enable = true;
 			wheelNeedsPassword = false;
 		};
-  };
+	};
 }
