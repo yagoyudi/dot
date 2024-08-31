@@ -21,6 +21,8 @@ in {
           vim.opt.swapfile = false
           vim.opt.wrap = false
 
+          vim.opt.guicursor = "n-v-i-c:block-Cursor"
+
           vim.api.nvim_create_autocmd({"FileType"}, {
                   pattern = {"c", "go"},
                   command = "setlocal shiftwidth=4 tabstop=4"
