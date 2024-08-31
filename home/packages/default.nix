@@ -11,5 +11,6 @@
     ./wayland.nix
     ./starship.nix
     ./firefox.nix
+    ./k8s.nix
   ];
 }

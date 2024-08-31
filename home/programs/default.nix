@@ -7,7 +7,8 @@
     ./swaylock.nix
     ./sway.nix
     ./tmux.nix
-    ./vimrc.nix
+    #./vimrc.nix
+    ./neovim.nix
     ./zathura.nix
   ];
 }

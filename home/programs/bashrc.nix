@@ -10,7 +10,6 @@ in {
 
         shellAliases = {
           ll = "ls -l --color";
-          vi = "vim";
           k = "kubectl";
         };
 
