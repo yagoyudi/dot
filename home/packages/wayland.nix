@@ -17,6 +17,8 @@ in {
           wf-recorder # record screen
           wlprop # xprop clone for wlroots based compositors
           wvkbd # on-screen keyboard for wlroots
+					waypipe
+					dmenu-wayland
         ];
       };
     };

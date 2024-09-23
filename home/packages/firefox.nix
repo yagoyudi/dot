@@ -11,6 +11,7 @@ in {
       home = {
         packages = [
           firefox
+					qutebrowser
         ];
       };
     };

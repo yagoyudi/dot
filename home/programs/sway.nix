@@ -1,14 +1,19 @@
-{ config, lib, ... }: 
+{
+	pkgs,
+	lib,
+	...
+}: 
 let name = "yf";
 in {
   home-manager = {
     users.${name} = {
       wayland.windowManager.sway = {
         enable = true;
-        config = rec {
+        config = {
           modifier = "Mod1";
           terminal = "foot";
           menu = "dmenu_run -l 10 -p Run";
+
           input = {
             "type:keyboard" = {
               xkb_layout = "br";
@@ -17,6 +22,25 @@ in {
             };
             "type:touchpad" = { tap = "enabled"; };
           };
+
+					startup = [
+						{ command = "${pkgs.foot}/bin/foot"; }
+						{ command = "${pkgs.zathura}/bin/zathura"; }
+						{ command = "${pkgs.qutebrowser}/bin/qutebrowser"; }
+					];
+
+					assigns = {
+						"1" = [
+							{ app_id = "foot"; }
+						];
+						"2" = [
+							{ app_id = "zathura"; }
+						];
+						"10" = [
+							{ app_id = "qutebrowser"; }
+						];
+					};
+
           keybindings = lib.mkOptionDefault {
             "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
             "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";

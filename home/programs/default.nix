@@ -10,5 +10,6 @@
     #./vimrc.nix
     ./neovim.nix
     ./zathura.nix
+		./qutebrowser.nix
   ];
 }

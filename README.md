@@ -25,7 +25,7 @@ Include [Sway WM](https://swaywm.org) and
 | Terminal          | `foot`                   |
 | Backlight         | `brightnessctl`          |
 | Bluetooth         | `blueman`+`bluetoothctl` |
-| Browser           | `firefox`                |
+| Browser           | `qutebrowser`            |
 | File manager      | `ranger`                 |
 | Image viewer      | `imv`                    | 
 | Menu              | `dmenu`                  | 
