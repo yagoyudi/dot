@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+main() {
+  local hostname="swift3"
+  local user="yf"
+  sudo nixos-rebuild switch --flake .#$hostname
+  # nix shell nixpkgs#home-manager
+  home-manager switch --flake .#$user@$hostname
+}
+
+main

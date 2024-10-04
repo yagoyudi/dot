@@ -53,7 +53,7 @@
       };
       bars = [{
         position = "top";
-        statusCommand = "while $HOME/dotfiles/home-manager/status-bar.sh; do sleep 50; done";
+        statusCommand = "while $HOME/github.com/dotfiles/home-manager/status-bar.sh; do sleep 50; done";
 
         colors = {
           statusline = "#ffffff";
