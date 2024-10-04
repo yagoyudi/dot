@@ -12,6 +12,7 @@
     ./tmux.nix
     ./xdg.nix
     #./emacs.nix
+    ./gpg.nix
   ];
 
   nixpkgs = {
