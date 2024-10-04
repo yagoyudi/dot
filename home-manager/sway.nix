@@ -20,13 +20,13 @@
       startup = [
         { command = "${pkgs.foot}/bin/foot"; }
         { command = "${pkgs.firefox}/bin/firefox"; }
-        { command = "${pkgs.emacs}/bin/emacs --daemon &"; }
+        { command = "${pkgs.emacs}/bin/emacsclient -c"; }
       ];
 
       assigns = {
         "1" = [
-          { app_id = "emacs"; }
           { app_id = "emacsclient"; }
+          { app_id = "foot"; }
         ];
         "2" = [
           { app_id = "zathura"; }
@@ -49,7 +49,7 @@
 
         "Mod1+Shift+m" = ''output "eDP-1" toggle'';
 
-        "Mod1+Shift+Return" = ''emacsclient -c -a "emacs"'';
+        "Mod1+p" = "exec passmenu";
       };
       bars = [{
         position = "top";
