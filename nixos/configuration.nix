@@ -1,14 +1,13 @@
+{ inputs, lib, config, pkgs, ... }:
+
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   imports = [
     ./hardware-configuration.nix
-    ./boot.nix
     ./fonts.nix
+    ./man-pages.nix
+    ./xdg.nix
+    ./services.nix
+    ./virtualisation.nix
   ];
 
   nixpkgs = {
@@ -46,6 +45,13 @@
     # Opinionated: make flake registry and nix path match flake inputs
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+  };
+
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   networking = {
@@ -93,63 +99,9 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    man-pages
-    man-pages-posix
-  ];
-
-  documentation = {
-    dev.enable = true;
-  };
-
   programs = {
     virt-manager.enable = true;
     wireshark.enable = true;
-  };
-
-  services = {
-    blueman.enable = true;
-
-    journald = {
-      extraConfig = "SystemMaxUse=1G";
-    };
-
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      jack.enable = true;
-    };
-
-    postgresql = {
-      enable = true;
-      package = pkgs.postgresql_14;
-    };
-  };
-
-  virtualisation = {
-    docker.enable = true;
-
-    libvirtd = {
-      enable = true;
-      qemu = {
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
-        swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [
-            (pkgs.OVMF.override {
-              secureBoot = true;
-              tpmSupport = true;
-            }).fd
-          ];
-        };
-      };
-    };
   };
 
   time.timeZone = "America/Sao_Paulo";
@@ -178,23 +130,6 @@
     sudo = {
       enable = true;
       wheelNeedsPassword = false;
-    };
-  };
-
-  xdg = {
-    portal = {
-      enable = true;
-      wlr = {
-        enable = false;
-      };
-      configPackages = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-      ];
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-      ];
     };
   };
 
