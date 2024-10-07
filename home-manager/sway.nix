@@ -20,12 +20,10 @@
       startup = [
         { command = "${pkgs.foot}/bin/foot"; }
         { command = "${pkgs.firefox}/bin/firefox"; }
-        { command = "${pkgs.emacs}/bin/emacsclient -c"; }
       ];
 
       assigns = {
         "1" = [
-          { app_id = "emacsclient"; }
           { app_id = "foot"; }
         ];
         "2" = [
@@ -53,7 +51,7 @@
       };
       bars = [{
         position = "top";
-        statusCommand = "while $HOME/github.com/dotfiles/home-manager/status-bar.sh; do sleep 50; done";
+        statusCommand = "while $HOME/github.com/dot/home-manager/status-bar; do sleep 50; done";
 
         colors = {
           statusline = "#ffffff";

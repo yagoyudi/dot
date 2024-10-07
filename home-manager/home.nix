@@ -5,12 +5,13 @@
     ./firefox.nix
     ./zathura.nix
     ./sway.nix
-    ./neovim.nix
     ./bash.nix
     ./foot.nix
     ./git.nix
     ./tmux.nix
     ./xdg.nix
+    ./vim.nix
+    #./neovim.nix
     #./emacs.nix
     ./gpg.nix
   ];
@@ -44,15 +45,8 @@
   home.file.".inputrc".text = ''
     set editing-mode vi
     set show-mode-in-prompt on
-
     set completion-ignore-case on
-
     set show-all-if-ambiguous on
-
-    TAB: menu-complete
-    set show-all-if-ambiguous on
-    "\e[A": history-search-backward
-    "\e[B": history-search-forward
   '';
 
   home.packages = with pkgs; [
