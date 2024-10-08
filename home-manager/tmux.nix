@@ -7,6 +7,7 @@
     terminal = "screen-256color";
     clock24 = true;
     baseIndex = 1;
+    customPaneNavigationAndResize = true;
     mouse = true;
   };
 }
