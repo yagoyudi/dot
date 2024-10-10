@@ -30,7 +30,7 @@ in {
         font = "Fira Sans 10";
         guioptions = "s";
         pages-per-row = 1;
-        recolor = true;
+        recolor = false;
         scroll-step = 50;
         completion-bg = background;
         completion-fg = foreground;
