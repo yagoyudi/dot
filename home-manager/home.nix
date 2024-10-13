@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -44,7 +44,6 @@
 
     ".vimrc".source = ./vimrc;
     ".tmux.conf".source = ./tmux.conf;
-    #".emacs".source = ./emacs.el;
   };
 
   home.packages = with pkgs; [
@@ -58,10 +57,11 @@
     gcc
     gnumake
     go
+    gopls # go lsp
     nil # nix lsp
 
     # k8s
-    kubectl-neat
+    kubectl-neat # clean manifests plugin
 
     # media
     ffmpeg # convert video
@@ -101,7 +101,7 @@
     cmake
     libtool
     pandoc
-    vim
+    vim-full
 		tmux
 
     swaykbdd # per-window keyboard layout for sway
@@ -114,16 +114,6 @@
     waypipe
     dmenu-wayland
     swaylock
-
-    emacs
-
-    axel # console downloading program
-    downonspot # spotify downloader written in rust
-    libgen-cli # used to access the library genesis dataset
-    tdl # telegram downloader/tools written in golang
-    wget # cli downloader
-    youtube-tui # an aesthetically pleasing youtube tui
-    ytmdl # youtube music downloader
   ];
 
   programs = {

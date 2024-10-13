@@ -1,27 +1,20 @@
-if has("eval")                               " vim-tiny lacks 'eval'
-  let skip_defaults_vim = 1
-endif
-
-set nocompatible
+" style
+colo default
 
 " automatically indent new lines
 set autoindent " (alpine)
 set smartindent
 
-set expandtab
-
-" number of spaces to replace a tab with when expandtab
-set tabstop=2 " (alpine)
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " use case when searching
 set noignorecase
 
 " automatically write files when changing when multiple files open
 set autowrite
-
-" deactivate line numbers
-set nonu
-set nornu
 
 " turn col and row position on in bottom right
 set ruler
@@ -32,11 +25,6 @@ set showmode
 " disable bell (also disable in .inputrc)
 set noerrorbells
 set vb t_vb=
-
-set softtabstop=2
-set shiftwidth=2
-
-set smarttab
 
 if v:version >= 800
   " stop vim from silently messing with files that it shouldn't
@@ -50,10 +38,6 @@ if v:version >= 800
   set nofoldenable
 endif
 
-" enough for line numbers + gutter within 80 standard
-set textwidth=72
-"set colorcolumn=73
-
 " disable spellcapcheck
 set spc=
 
@@ -64,7 +48,7 @@ set nowritebackup
 
 set icon
 
-" highlight search hits
+" search
 set nohlsearch
 set incsearch
 set linebreak
@@ -124,8 +108,6 @@ set ttyfast
 " allow sensing the filetype
 filetype plugin on
 
-set background=dark
-
 set cinoptions+=:0
 
 " force loclist to always close when buffer does (affects vim-go, etc.)
@@ -133,9 +115,6 @@ augroup CloseLoclistWindowGroup
   autocmd!
   autocmd QuitPre * if empty(&buftype) | lclose | endif
 augroup END
-
-" make Y consistent with D and C (yank til end)
-map Y y$
 
 " better command-line completion
 set wildmenu
@@ -151,7 +130,26 @@ imap <tab><tab> <c-x><c-o>
 " start at last place you were editing
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Better page down and page up
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_localcopydircmd = 'cp -r'
+let g:netrw_keepdir = 0
+
+" make
+set makeprg=./compile
+
+" vim-go
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operatores = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_functions_parameters = 1
+let g:go_highlight_functions_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_assignments = 1
+
+" keybindings
+nnoremap ; q:
 noremap <C-n> <C-d>
 noremap <C-p> <C-b>
-
+map Y y$

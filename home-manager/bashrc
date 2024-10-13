@@ -4,9 +4,12 @@
 alias ll="ls -l --color"
 alias grep="grep --color=auto"
 alias k="kubectl"
+alias v=vim
 
 export PATH="$PATH:$HOME/go/bin"
+export EDITOR="vim"
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 eval "$(starship init bash)"
+
