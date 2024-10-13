@@ -12,13 +12,15 @@
     };
 
     initExtra = ''
-          source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-        '';
+      source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
 
-    sessionVariables = { PATH = "$PATH:$HOME/go/bin"; };
+    sessionVariables = {
+      PATH = "$PATH:$HOME/go/bin";
+    };
 
     bashrcExtra = ''
-          eval "$(starship init bash)"
-        '';
+      eval "$(starship init bash)"
+    '';
   };
 }

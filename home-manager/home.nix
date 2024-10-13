@@ -5,14 +5,9 @@
     ./firefox.nix
     ./zathura.nix
     ./sway.nix
-    ./bash.nix
     ./foot.nix
     ./git.nix
-    ./tmux.nix
     ./xdg.nix
-    ./vim.nix
-    #./neovim.nix
-    #./emacs.nix
     ./gpg.nix
   ];
 
@@ -42,12 +37,15 @@
     stateVersion = "24.05";
   };
 
-  home.file.".inputrc".text = ''
-    set editing-mode vi
-    set show-mode-in-prompt on
-    set completion-ignore-case on
-    set show-all-if-ambiguous on
-  '';
+  home.file = {
+    ".bashrc".source = ./bashrc;
+    ".bash_profile".source = ./bash_profile;
+    ".inputrc".source = ./inputrc;
+
+    ".vimrc".source = ./vimrc;
+    ".tmux.conf".source = ./tmux.conf;
+    #".emacs".source = ./emacs.el;
+  };
 
   home.packages = with pkgs; [
     # prompt
@@ -103,6 +101,8 @@
     cmake
     libtool
     pandoc
+    vim
+		tmux
 
     swaykbdd # per-window keyboard layout for sway
     wayland-utils # wayland utilities (wayland-info)
@@ -114,6 +114,8 @@
     waypipe
     dmenu-wayland
     swaylock
+
+    emacs
 
     axel # console downloading program
     downonspot # spotify downloader written in rust
