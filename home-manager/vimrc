@@ -26,21 +26,6 @@ set showmode
 set noerrorbells
 set vb t_vb=
 
-if v:version >= 800
-  " stop vim from silently messing with files that it shouldn't
-  set nofixendofline
-
-  " better ascii friendly listchars
-  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
-
-  " i hate automatic folding
-  set foldmethod=manual
-  set nofoldenable
-endif
-
-" disable spellcapcheck
-set spc=
-
 " more risky, but cleaner
 set nobackup
 set noswapfile
@@ -56,41 +41,12 @@ set linebreak
 " avoid most of the 'Hit Enter ...' messages
 set shortmess=aoOtTI
 
-" prevents truncated yanks, deletes, etc.
-set viminfo='20,<1000,s1000
-
-" not a fan of bracket matching or folding
-if has("eval") " vim-tiny detection
-  let g:loaded_matchparen=1
-endif
+" disable bracket matching
 set noshowmatch
 
 " wrap around when searching
 set wrapscan
 set nowrap
-
-" Just the formatoptions defaults, these are changed per filetype by
-" plugins. Most of the utility of all of this has been superceded by the
-" use of modern simplified pandoc for capturing knowledge source instead
-" of arbitrary raw text files.
-
-set fo-=t   " don't auto-wrap text using text width
-set fo+=c   " autowrap comments using textwidth with leader
-set fo-=r   " don't auto-insert comment leader on enter in insert
-set fo-=o   " don't auto-insert comment leader on o/O in normal
-set fo+=q   " allow formatting of comments with gq
-set fo-=w   " don't use trailing whitespace for paragraphs
-set fo-=a   " disable auto-formatting of paragraph changes
-set fo-=n   " don't recognized numbered lists
-set fo+=j   " delete comment prefix when joining
-set fo-=2   " don't use the indent of second paragraph line
-set fo-=v   " don't use broken 'vi-compatible auto-wrapping'
-set fo-=b   " don't use broken 'vi-compatible auto-wrapping'
-set fo+=l   " long lines not broken in insert mode
-set fo+=m   " multi-byte character line break support
-set fo+=M   " don't add space before or after multi-byte char
-set fo-=B   " don't add space between two multi-byte chars
-set fo+=1   " don't break a line after a one-letter word
 
 " stop complaints about switching buffer with changes
 set hidden
@@ -110,27 +66,17 @@ filetype plugin on
 
 set cinoptions+=:0
 
-" force loclist to always close when buffer does (affects vim-go, etc.)
-augroup CloseLoclistWindowGroup
-  autocmd!
-  autocmd QuitPre * if empty(&buftype) | lclose | endif
-augroup END
-
 " better command-line completion
 set wildmenu
 
 " better cursor movement
-"set virtualedit=all
+set virtualedit=all
 set wrap
-
-" enable omni-completion
-set omnifunc=syntaxcomplete#Complete
-imap <tab><tab> <c-x><c-o>
 
 " start at last place you were editing
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Netrw
+" netrw
 let g:netrw_banner = 0
 let g:netrw_localcopydircmd = 'cp -r'
 let g:netrw_keepdir = 0
@@ -138,18 +84,24 @@ let g:netrw_keepdir = 0
 " make
 set makeprg=./compile
 
+set backspace=indent,eol,start
+
 " vim-go
-let g:go_highlight_extra_types = 1
-let g:go_highlight_operatores = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_functions_parameters = 1
-let g:go_highlight_functions_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions_parameters = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_diagnostic_errors = 1
+let g:go_highlight_diagnostic_warnings = 1
 
 " keybindings
-nnoremap ; q:
+nnoremap ; q:i
 noremap <C-n> <C-d>
 noremap <C-p> <C-b>
 map Y y$
