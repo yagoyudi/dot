@@ -1,18 +1,34 @@
 #!/usr/bin/env bash
 
 home() {
-  home-manager switch --flake .#$1@$2
+				home-manager switch --flake .#${USER}@${HOSTNAME}
 }
 
-system() {
-  sudo nixos-rebuild switch --flake .#$1
+nixos() {
+				sudo nixos-rebuild switch --flake .#${HOSTNAME}
 }
 
-main() {
-  local hostname="swift3"
-  local user="yf"
-  system $hostname
-  home $user $hostname
+show_help() {
+				echo "Usage: $0 [option]"
+				echo
+				echo "Options:"
+				echo "  h, home           Reload home-manager"
+				echo "  n, nixos          Reload nixos"
+				echo "  a                 Reload both"
 }
 
-main
+case $1 in
+				h | home)
+								home
+								;;
+				n | nixos)
+								nixos
+								;;
+				a)
+								home
+								nixos
+								;;
+				*)
+								show_help
+								;;
+esac
