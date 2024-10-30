@@ -1,10 +1,12 @@
 colo habamax
 
-set nocompatible
-
 syntax enable
 filetype indent plugin on
 
+set nocompatible
+set nobackup
+set noswapfile
+set nowritebackup
 
 set path+=** " Search down into subfolders.
 set wildmenu " Display all matching files when we tab complete.
@@ -59,6 +61,4 @@ let g:go_highlight_diagnostic_warnings = 1
 
 set makeprg=./compile
 
-" References:
-" - https://www.youtube.com/watch?v=XA2WjJbmmoM
-
+set sw=2 ts=2 sts=2

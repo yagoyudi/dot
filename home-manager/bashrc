@@ -8,6 +8,7 @@ alias v=vim
 
 export PATH="$PATH:$HOME/go/bin"
 export EDITOR="vim"
+export GREENLIGHT_DB_DSN="postgres://greenlight:pa55word@localhost/greenlight?sslmode=disable"
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 

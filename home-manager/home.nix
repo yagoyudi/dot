@@ -9,6 +9,7 @@
     ./git.nix
     ./xdg.nix
     ./gpg.nix
+    ./rofi.nix
   ];
 
   nixpkgs = {
@@ -58,6 +59,7 @@
     gnumake
     go
     gopls # go lsp
+    go-migrate
     nil # nix lsp
 
     # k8s
@@ -102,7 +104,7 @@
     libtool
     pandoc
     vim-full
-		tmux
+    tmux
 
     swaykbdd # per-window keyboard layout for sway
     wayland-utils # wayland utilities (wayland-info)

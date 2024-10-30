@@ -6,7 +6,7 @@
     config = {
       modifier = "Mod1";
       terminal = "foot";
-      menu = "dmenu_run -l 10 -p Run";
+      menu = "rofi -show run";
 
       input = {
         "type:keyboard" = {
@@ -47,7 +47,7 @@
 
         "Mod1+Shift+m" = ''output "eDP-1" toggle'';
 
-        "Mod1+p" = "exec passmenu";
+        "Mod1+p" = "exec rofi-pass";
       };
       bars = [{
         position = "top";
