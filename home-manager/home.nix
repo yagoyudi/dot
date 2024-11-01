@@ -59,6 +59,7 @@
     gnumake
     go
     gopls # go lsp
+    gotools # godoc, etc...
     go-migrate # sql migrations
     mage # make, but in go
     nil # nix lsp
