@@ -51,7 +51,7 @@
       };
       bars = [{
         position = "top";
-        statusCommand = "while $HOME/github.com/dot/home-manager/status-bar; do sleep 50; done";
+        statusCommand = "while $HOME/github.com/yagoyudi/dot/home-manager/status-bar; do sleep 50; done";
 
         colors = {
           statusline = "#ffffff";

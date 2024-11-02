@@ -10,6 +10,7 @@
     ./xdg.nix
     ./gpg.nix
     ./rofi.nix
+    ./pass.nix
   ];
 
   nixpkgs = {
@@ -99,7 +100,6 @@
     ranger # file manager on terminal
     nmap # scan network
     jq # parse json
-    pass # password-store
     gnupg
     pinentry
     cmake

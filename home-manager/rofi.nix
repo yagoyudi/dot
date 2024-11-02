@@ -7,6 +7,7 @@
     pass = {
       enable = true;
       package = pkgs.rofi-pass-wayland;
+      stores = [ "$HOME/github.com/yagoyudi/pass" ];
     };
   };
 }
