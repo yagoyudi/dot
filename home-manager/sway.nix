@@ -4,7 +4,7 @@
   wayland.windowManager.sway = {
     enable = true;
     config = {
-      modifier = "Mod1";
+      modifier = "Mod4";
       terminal = "foot";
       menu = "rofi -show run";
 

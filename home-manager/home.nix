@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,8 @@
     ./gpg.nix
     ./rofi.nix
     ./pass.nix
+    ./zellij.nix
+    ./helix.nix
   ];
 
   nixpkgs = {
