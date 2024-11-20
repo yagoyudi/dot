@@ -13,7 +13,7 @@ if status --is-interactive
 	set -U fish_user_paths $fish_user_paths $HOME/go/bin
 
 	# Variáveis de ambiente
-	set -x EDITOR nvim
+	set -x EDITOR vi
 	set -x PASSWORD_STORE_DIR $HOME/github.com/yagoyudi/pass
 
 	# Carregar variáveis de sessão do Nix
