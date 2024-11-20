@@ -11,14 +11,12 @@
     ./gpg.nix
     ./rofi.nix
     ./pass.nix
-    ./zellij.nix
-    ./helix.nix
   ];
 
   nixpkgs = {
     overlays = [
       # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
+      #neovim-nightly-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -44,6 +42,7 @@
   home.file = {
     ".bashrc".source = ./bashrc;
     ".bash_profile".source = ./bash_profile;
+    ".config/fish/config.fish".source = ./config.fish;
     ".inputrc".source = ./inputrc;
 
     ".vimrc".source = ./vimrc;
@@ -66,6 +65,7 @@
     go-migrate # sql migrations
     mage # make, but in go
     nil # nix lsp
+    marksman
 
     # k8s
     kubectl-neat # clean manifests plugin
@@ -92,14 +92,13 @@
     zip
     zstd
 
+    # CLI
     tree # view in files tree structure
     grim # screenshot
     slurp # select area
     nix-prefetch-github
     brightnessctl # control brightness
-    dmenu # application launcher
     speedtest-go # test network speed
-    ranger # file manager on terminal
     nmap # scan network
     jq # parse json
     gnupg
@@ -109,6 +108,8 @@
     pandoc
     vim-full
     tmux
+		fish
+		emacs
 
     swaykbdd # per-window keyboard layout for sway
     wayland-utils # wayland utilities (wayland-info)

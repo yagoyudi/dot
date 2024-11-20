@@ -6,7 +6,7 @@ alias grep="grep --color=auto"
 alias k="kubectl"
 
 export PATH="$PATH:$HOME/go/bin"
-export EDITOR="vim"
+export EDITOR="nvim"
 export PASSWORD_STORE_DIR="$HOME/github.com/yagoyudi/pass";
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"

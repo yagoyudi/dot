@@ -3,8 +3,9 @@
 {
   wayland.windowManager.sway = {
     enable = true;
+
     config = {
-      modifier = "Mod4";
+      modifier = "Mod1";
       terminal = "foot";
       menu = "rofi -show run";
 
@@ -23,9 +24,6 @@
       ];
 
       assigns = {
-        "1" = [
-          { app_id = "foot"; }
-        ];
         "2" = [
           { app_id = "zathura"; }
         ];
@@ -49,26 +47,22 @@
 
         "Mod1+p" = "exec rofi-pass";
       };
-      bars = [{
-        position = "top";
-        statusCommand = "while $HOME/github.com/yagoyudi/dot/home-manager/status-bar; do sleep 50; done";
 
-        colors = {
-          statusline = "#ffffff";
-          background = "#323232";
-          inactiveWorkspace = {
-            background = "#323232";
-            border = "#323232";
-            text = "#5c5c5c";
-          };
-        };
-        fonts = { size = 10.0; };
+      bars = [{
+        command = "echo 'no bar, btw'";
       }];
+
       fonts = { size = 10.0; };
+
       window = {
         border = 1;
-        titlebar = true;
+        titlebar = false;
       };
     };
-  };
+
+		extraConfig = ''
+			workspace 1 output DP-1
+			workspace 5 output eDP-1
+		'';
+	};
 }

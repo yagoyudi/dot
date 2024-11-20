@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.foot = {
@@ -30,6 +30,7 @@
       main = {
         term = "xterm-256color";
         font = "monospace:size=15";
+        shell = "${pkgs.fish}/bin/fish";
       };
     };
   };

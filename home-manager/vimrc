@@ -1,8 +1,7 @@
-colo habamax
-
 syntax enable
 filetype indent plugin on
 
+set background=dark
 set sw=2 ts=2 sts=2
 set nocompatible
 set nobackup
