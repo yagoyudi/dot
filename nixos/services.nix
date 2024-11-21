@@ -18,9 +18,11 @@
       jack.enable = true;
     };
 
+    /*
     postgresql = {
       enable = true;
       package = pkgs.postgresql_14;
     };
+    */
   };
 }
