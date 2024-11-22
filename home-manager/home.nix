@@ -37,6 +37,7 @@
   home.file = {
     ".bashrc".source = ./bashrc;
     ".bash_profile".source = ./bash_profile;
+    ".config/starship.toml".source = ./starship.toml;
     ".config/fish/config.fish".source = ./config.fish;
     ".inputrc".source = ./inputrc;
 

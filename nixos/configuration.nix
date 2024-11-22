@@ -75,6 +75,7 @@
 
   users.users = {
     yf = {
+      shell = pkgs.fish;
       isNormalUser = true;
       extraGroups = [
         "wheel"
@@ -102,6 +103,7 @@
   programs = {
     virt-manager.enable = true;
     wireshark.enable = true;
+    fish.enable = true;
   };
 
   time.timeZone = "America/Sao_Paulo";
