@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   xdg = {
@@ -6,6 +6,7 @@
       enable = true;
       wlr = {
         enable = false;
+        #enable = true;
       };
       configPackages = with pkgs; [
         xdg-desktop-portal-gtk
@@ -17,5 +18,4 @@
       ];
     };
   };
-
 }

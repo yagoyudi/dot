@@ -19,8 +19,8 @@
       };
 
       startup = [
-        { command = "${pkgs.foot}/bin/foot"; }
-        { command = "${pkgs.firefox}/bin/firefox"; }
+        #{ command = "${pkgs.foot}/bin/foot"; }
+        #{ command = "${pkgs.firefox}/bin/firefox"; }
       ];
 
       assigns = {

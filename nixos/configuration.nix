@@ -65,8 +65,10 @@
       enable = true;
       allowPing = false;
       allowedTCPPorts = [
+        4000
       ];
       allowedUDPPorts = [
+        4000
       ];
       connectionTrackingModules = [
       ];
@@ -75,7 +77,6 @@
 
   users.users = {
     yf = {
-      shell = pkgs.fish;
       isNormalUser = true;
       extraGroups = [
         "wheel"
@@ -103,8 +104,15 @@
   programs = {
     virt-manager.enable = true;
     wireshark.enable = true;
-    fish.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-kde
+    xdg-desktop-portal-wlr
+  ];
 
   time.timeZone = "America/Sao_Paulo";
 

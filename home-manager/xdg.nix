@@ -2,6 +2,28 @@
 
 {
   xdg = {
+    /*
+     portal = {
+      enable = true;
+
+      config = {
+        common = {
+          default = [ "wlr" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+          "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        };
+      };
+      configPackages = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+      ];
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+      ];
+    };
+    */
+
     configFile = { "mimeapps.list".force = true; };
 
     userDirs = {

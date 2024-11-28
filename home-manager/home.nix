@@ -10,6 +10,7 @@
     ./gpg.nix
     ./rofi.nix
     ./pass.nix
+    ./sway.nix
   ];
 
   nixpkgs = {
@@ -38,6 +39,7 @@
     ".bashrc".source = ./bashrc;
     ".bash_profile".source = ./bash_profile;
     ".config/starship.toml".source = ./starship.toml;
+    ".config/river/init".source = ./init;
     ".config/fish/config.fish".source = ./config.fish;
     ".inputrc".source = ./inputrc;
 
@@ -108,7 +110,10 @@
     w3m
 
     dwl
+    river
 		emacs
+    wireshark
+    sioyek
 
     swaykbdd # per-window keyboard layout for sway
     wayland-utils # wayland utilities (wayland-info)
