@@ -130,8 +130,8 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pulsemixer --change-volume -5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pulsemixer --change-volume +5'
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pulsemixer --change-volume +5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pulsemixer --change-volume -5'
     riverctl map $mode None XF86AudioMute         spawn 'pulsemixer --toggle-mute'
     riverctl map $mode None XF86AudioMicMute      spawn "pulsemixer --set-mute $(pulsemixer --list-sources | grep 'default' | awk '{print $1}') toggle";
 
