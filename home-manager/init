@@ -157,6 +157,9 @@ riverctl border-color-unfocused 0x586e75
 riverctl set-repeat 50 300
 riverctl keyboard-layout br
 
+# Set tap in touchpad
+riverctl input pointer-1739-52544-SYNA7DAB:01_06CB:CD40_Touchpad tap enabled
+
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 riverctl rule-add -app-id 'float*' -title 'foo' float
 

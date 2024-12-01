@@ -5,9 +5,10 @@ alias ll="ls -l --color"
 alias grep="grep --color=auto"
 alias k="kubectl"
 
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/go/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export EDITOR="vi"
 export PASSWORD_STORE_DIR="$HOME/github.com/yagoyudi/pass";
+export KUBECONFIG="$HOME/talos/kubeconfig"
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 

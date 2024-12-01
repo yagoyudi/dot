@@ -15,11 +15,13 @@
 
   nixpkgs = {
     overlays = [
+      /*
       (final: prev: {
         dwl = prev.dwl.override {
           conf = ./config.h;
         };
       })
+      */
     ];
     # Configure your nixpkgs instance
     config = {
@@ -32,7 +34,7 @@
   home = {
     username = "yf";
     homeDirectory = "/home/yf";
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   home.file = {
@@ -66,7 +68,8 @@
     marksman
 
     # k8s
-    kubectl-neat # clean manifests plugin
+    kubectl
+    talosctl
 
     # media
     ffmpeg # convert video
