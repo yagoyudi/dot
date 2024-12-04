@@ -1,8 +1,10 @@
 # Dotfiles
 
-## Installation
+## How to use
 
-TODO
+```sh
+mage
+```
 
 ## References
 
