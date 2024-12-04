@@ -56,16 +56,34 @@
     # office suite
     libreoffice
 
-    # dev
+    # c
     gcc
     gnumake
+
+    # go
     go
     gopls # go lsp
     gotools # godoc, etc...
     go-migrate # sql migrations
     mage # make, but in go
+
+    # nix
     nil # nix lsp
+
+    # md
     marksman
+
+    # java
+    jre8
+    jdk8
+    maven
+
+    # python
+    python3Full
+
+    # rust
+    cargo
+    rustc
 
     # k8s
     kubectl
@@ -109,12 +127,13 @@
     pandoc
     vim-full
     tmux
-		fish
+    fish
     w3m
+    ripgrep
 
     dwl
     river
-		emacs
+    emacs
     wireshark
     sioyek
 
