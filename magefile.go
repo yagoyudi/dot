@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+
+	"github.com/carolynvs/magex/pkg"
 )
 
 var Aliases = map[string]any{
@@ -55,4 +57,8 @@ func BuildNixOS() error {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	return cmd.Run()
+}
+
+func EnsureMage() error {
+	return pkg.EnsureMage("")
 }
