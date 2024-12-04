@@ -87,6 +87,7 @@
 
     # k8s
     kubectl
+    kubernetes-helm
     talosctl
 
     # media
