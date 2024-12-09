@@ -131,6 +131,9 @@
     fish
     w3m
     ripgrep
+    eza
+    bat
+    gh
 
     dwl
     river

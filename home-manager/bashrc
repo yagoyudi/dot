@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias ls="eza"
+alias cat="bat"
 alias ll="ls -l --color"
 alias grep="grep --color=auto"
 alias k="kubectl"

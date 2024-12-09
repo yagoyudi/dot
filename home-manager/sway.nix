@@ -19,8 +19,8 @@
       };
 
       startup = [
-        #{ command = "${pkgs.foot}/bin/foot"; }
-        #{ command = "${pkgs.firefox}/bin/firefox"; }
+        { command = "${pkgs.foot}/bin/foot"; }
+        { command = "${pkgs.firefox}/bin/firefox"; }
       ];
 
       assigns = {
@@ -46,23 +46,33 @@
         "Mod1+Shift+m" = ''output "eDP-1" toggle'';
 
         "Mod1+p" = "exec rofi-pass";
+
+        "Mod1+Shift+p" = "mode passthrough";
       };
 
       bars = [{
         command = "echo 'no bar, btw'";
       }];
 
-      fonts = { size = 10.0; };
+      fonts = {
+        size = 11.0;
+      };
 
       window = {
         border = 1;
         titlebar = false;
       };
+
+      modes = {
+        passthrough = {
+          "Mod1+Shift+p" = "mode default";
+        };
+      };
     };
 
-		extraConfig = ''
-			workspace 1 output DP-1
-			workspace 5 output eDP-1
-		'';
-	};
+    extraConfig = ''
+          workspace 1 output DP-1
+          workspace 5 output eDP-1
+    '';
+  };
 }
