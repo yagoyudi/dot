@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   virtualisation = {
     docker.enable = true;
 
@@ -16,7 +14,8 @@
             (pkgs.OVMF.override {
               secureBoot = true;
               tpmSupport = true;
-            }).fd
+            })
+            .fd
           ];
         };
       };

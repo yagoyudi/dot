@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{...}: {
   boot = {
     cleanTmpDir = true;
     loader = {

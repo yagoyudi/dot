@@ -1,12 +1,14 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   wayland.windowManager.sway = {
     enable = true;
 
     config = {
       modifier = "Mod1";
-      terminal = "foot";
+      terminal = "alacritty";
       menu = "rofi -show run";
 
       input = {
@@ -15,20 +17,20 @@
           repeat_rate = "50";
           repeat_delay = "300";
         };
-        "type:touchpad" = { tap = "enabled"; };
+        "type:touchpad" = {tap = "enabled";};
       };
 
       startup = [
-        { command = "${pkgs.foot}/bin/foot"; }
-        { command = "${pkgs.firefox}/bin/firefox"; }
+        {command = "${pkgs.alacritty}/bin/alacritty";}
+        {command = "${pkgs.firefox}/bin/firefox";}
       ];
 
       assigns = {
-        "2" = [
-          { app_id = "zathura"; }
+        "9" = [
+          {app_id = "zathura";}
         ];
         "10" = [
-          { app_id = "firefox"; }
+          {app_id = "firefox";}
         ];
       };
 
@@ -50,9 +52,11 @@
         "Mod1+Shift+p" = "mode passthrough";
       };
 
-      bars = [{
-        command = "echo 'no bar, btw'";
-      }];
+      bars = [
+        {
+          command = "echo 'no bar, btw'";
+        }
+      ];
 
       fonts = {
         size = 11.0;
@@ -67,12 +71,15 @@
         passthrough = {
           "Mod1+Shift+p" = "mode default";
         };
+        resize = {
+          "Mod1+r" = "mode resize";
+        };
       };
     };
 
     extraConfig = ''
-          workspace 1 output DP-1
-          workspace 5 output eDP-1
+      workspace 1 output DP-1
+      workspace 5 output eDP-1
     '';
   };
 }

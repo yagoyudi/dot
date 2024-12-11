@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./firefox.nix
     ./zathura.nix
@@ -67,6 +65,9 @@
     go-migrate # sql migrations
     mage # make, but in go
 
+    # zig
+    zig
+
     # nix
     nil # nix lsp
 
@@ -84,6 +85,9 @@
     # rust
     cargo
     rustc
+
+    # js
+    nodejs_23
 
     # k8s
     kubectl
@@ -134,7 +138,9 @@
     eza
     bat
     gh
+    neovim
 
+    alacritty
     dwl
     river
     emacs

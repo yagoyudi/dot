@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   services = {
     # bluetooth
     blueman.enable = true;

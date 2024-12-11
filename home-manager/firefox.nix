@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{...}: {
   programs = {
     firefox = {
       enable = true;
@@ -38,10 +36,10 @@
             "ui.prefersReducedMotion" = 1;
           };
           userChrome = ''
-                #webrtcIndicator {
-                  display: none;
-                }
-              '';
+            #webrtcIndicator {
+              display: none;
+            }
+          '';
         };
       };
       policies = {
