@@ -128,6 +128,17 @@ func GPG() error {
 	return cleanAndLink(repoPath, xdgPath)
 }
 
+func Bash() error {
+	repoPath := "$HOME/github.com/yagoyudi/dot/.bashrc"
+	xdgPath := "$HOME/.bashrc"
+	if err := cleanAndLink(repoPath, xdgPath); err != nil {
+		return err
+	}
+	repoPath = "$HOME/github.com/yagoyudi/dot/.bash_profile"
+	xdgPath = "$HOME/.bash_profile"
+	return cleanAndLink(repoPath, xdgPath)
+}
+
 func cleanAndLink(repoPath, xdgPath string) error {
 	err := sh.RunV("rm", "-rf", xdgPath)
 	if err != nil {
