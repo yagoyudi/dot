@@ -111,11 +111,119 @@
   };
 
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-kde
     xdg-desktop-portal-wlr
+
+    # prompt
+    starship
+
+    # office suite
+    libreoffice
+
+    # c
+    gcc
+    gnumake
+
+    # go
+    go
+    gopls # go lsp
+    gotools # godoc, etc...
+    go-migrate # sql migrations
+    mage # make, but in go
+
+    # zig
+    zig
+
+    # nix
+    nil # nix lsp
+
+    # md
+    marksman
+
+    # java
+    jre8
+    jdk8
+    maven
+
+    # python
+    python3Full
+
+    # rust
+    cargo
+    rustc
+
+    # js
+    nodejs_23
+
+    # k8s
+    kubectl
+    kubernetes-helm
+    talosctl
+
+    # media
+    ffmpeg # convert video
+    pulsemixer # audio volume
+    mpv # video player
+    imv # image viewer
+
+    # archive
+    atool
+    bzip2
+    gzip
+    libarchive
+    lz4
+    lzip
+    lzo
+    lzop
+    p7zip
+    rzip
+    unzip
+    xz
+    zip
+    zstd
+
+    # CLI
+    tree # view in files tree structure
+    grim # screenshot
+    slurp # select area
+    nix-prefetch-github
+    brightnessctl # control brightness
+    speedtest-go # test network speed
+    nmap # scan network
+    jq # parse json
+    gnupg
+    pinentry
+    cmake
+    libtool
+    pandoc
+    vim-full
+    tmux
+    fish
+    w3m
+    ripgrep
+    eza
+    bat
+    gh
+    neovim
+    pass-wayland
+
+    alacritty
+    dwl
+    river
+    emacs
+    wireshark
+    sioyek
+
+    swaykbdd # per-window keyboard layout for sway
+    wayland-utils # wayland utilities (wayland-info)
+    wl-clip-persist # keep wayland clipboard even after programs close
+    wl-clipboard # command-line copy/paste utilities
+    wf-recorder # record screen
+    wlprop # xprop clone for wlroots based compositors
+    wvkbd # on-screen keyboard for wlroots
+    waypipe
+    dmenu-wayland
+    swaylock
   ];
 
   time.timeZone = "America/Sao_Paulo";

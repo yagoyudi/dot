@@ -22,6 +22,8 @@
     # VPN
     tailscale.enable = true;
 
+    mako.enable = true;
+
     /*
     # DB
     postgresql = {
