@@ -136,6 +136,11 @@ func Bash() error {
 	}
 	repoPath = "$HOME/github.com/yagoyudi/dot/.bash_profile"
 	xdgPath = "$HOME/.bash_profile"
+	if err := cleanAndLink(repoPath, xdgPath); err != nil {
+		return err
+	}
+	repoPath = "$HOME/github.com/yagoyudi/dot/.inputrc"
+	xdgPath = "$HOME/.inputrc"
 	return cleanAndLink(repoPath, xdgPath)
 }
 
